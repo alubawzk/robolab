@@ -33,6 +33,26 @@ import gymnasium as gym
 from . import agents
 
 gym.register(
+    id="Mini3-AMP",
+    entry_point=f"{__name__}.amp_env:AmpEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.mini3_amp_env_cfg:Mini3AmpEnvCfg",
+        "rsl_rl_cfg_entry_point": f"{agents.__name__}.mini3_amp_agent_cfg:RslRlOnPolicyRunnerMini3AmpCfg",
+    },
+)
+
+gym.register(
+    id="Mini3-AMP-Play",
+    entry_point=f"{__name__}.amp_env:AmpEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.mini3_amp_env_cfg:Mini3AmpEnvCfg_PLAY",
+        "rsl_rl_cfg_entry_point": f"{agents.__name__}.mini3_amp_agent_cfg:RslRlOnPolicyRunnerMini3AmpCfg",
+    },
+)
+
+gym.register(
     id="Atom01-AMP",
     entry_point=f"{__name__}.amp_env:AmpEnv",
     disable_env_checker=True,

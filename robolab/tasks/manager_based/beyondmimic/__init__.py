@@ -48,6 +48,16 @@ gym.register(
 )
 
 gym.register(
+    id="Mini3-BeyondMimic",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.mini3_beyondmimic_env_cfg:Mini3BeyondMimicEnvCfg",
+        "rsl_rl_cfg_entry_point": f"{agents.__name__}.mini3_beyondmimic_agent_cfg:Mini3BeyondMimicPPORunnerCfg",
+    },
+)
+
+gym.register(
     id="Atom01-Getup-Mimic",
     entry_point="isaaclab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,

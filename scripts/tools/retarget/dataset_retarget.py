@@ -109,6 +109,8 @@ from isaaclab.scene import InteractiveScene
 # load robot cfg as single_retarget does
 if args_cli.robot == "atom01":
     from robolab.assets.robots.roboparty import ATOM01_CFG as ROBOT_CFG
+elif args_cli.robot == "mini3":
+    from robolab.assets.robots.roboparty import MINI3_CFG as ROBOT_CFG
 else:
     raise ValueError(f"Robot {args_cli.robot} not supported.")
 
